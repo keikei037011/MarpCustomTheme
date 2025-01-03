@@ -1,0 +1,245 @@
+/* テーマ名を設定 */
+/* @theme mytheme */
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap');
+@import "default.css";
+
+:root {
+    --fw: 1;
+}
+/* ----- レイアウト ----- */
+.flex{
+    display: flex;
+    gap: 1em;
+}
+.sa {
+    justify-content: space-around;
+    /* border: 8px dashed rgb(15, 166, 226);
+    background-color: rgb(222, 244, 255); */
+}
+.sb {
+    justify-content: space-between;
+    /* border: 8px dashed rgb(21, 17, 255);
+    background-color: rgb(222, 244, 255); */
+}
+.sa div,.sb div{
+    margin: 0.1em;
+    /* border: 8px dashed rgb(80, 177, 109);
+    background-color: rgb(227, 250, 237); */
+}
+.fw div{
+    flex: var(--fw);
+    /* background-color: rgb(244, 238, 255);
+    border: 8px dashed rgb(93, 0, 255); */
+}/* ---------- */
+
+/* ページ番号表示箇所 */
+section::after{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    color: gray;
+    font-size: 14pt;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    font-family: "BIZ UDPGothic", "MS PGothic", "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    font-size: 24pt;
+    padding: 20px;
+    color:rgba(0, 0, 0, 0.66);
+    background: #fdfdfd;
+}
+
+/* 目次クラス 開始*/ 
+section.toc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* 行間を調整 */
+    line-height: 1.8em;
+    text-align: left;
+}
+
+.toc h1 {
+    font-size: 20pt;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+  
+/* リンクスタイル */
+.toc a {
+    color: #333; /* リンク色 */
+    text-decoration: none; /* 下線を削除 */
+}
+  
+.toc a:hover {
+    color: #007bff; /* ホバー時のリンク色 */
+    text-decoration: underline;
+}
+/* 目次クラス　終了 */
+
+/* タイトルクラス */
+section.title {
+    justify-content: center;
+}
+
+/* タイトル名称記載箇所 */
+section.title h1 {
+    display: flex;
+    font-weight: bold;
+    font-size: 40pt;
+    padding: 100px 0;
+    text-align: center;
+}
+
+/* 日時作成者等記載箇所 */
+section.title p {
+    color: rgb(68, 67, 67);
+    font-size: 25pt;
+    margin-top: 0px;
+    text-align: left;
+    margin-bottom: 40px;
+  }
+/* タイトルクラス 終了*/
+
+/* コンテンツクラス */
+section.content {
+    padding-top: 30px;
+}
+
+section.content h1 {
+    font-size: 34pt;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+section.content h2 {
+    font-size: 30pt;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+  
+section.content ul {
+    flex-wrap: wrap;
+    gap: 10px;
+}
+  
+section.content li {
+    padding: 5px;
+    font-size: 18pt;
+    /* 後ろの余白を調整 */
+    margin-bottom: auto;
+}
+  
+section.content p {
+    font-size: 18pt;
+    margin-bottom: 10px;
+}
+/* コンテンツクラス 終了*/
+
+/* ヘッダー */
+header {
+    display: flex;
+    height: 60px;
+    color: rgb(179, 178, 178);
+    font-size: 14pt;
+    padding: 0 20px;
+}
+
+/* フッター */
+footer {
+    width: 100%;
+    position: fixed;
+    padding: 10px;
+    background: white;
+    color: rgb(179, 178, 178);
+    bottom: 0px;
+    text-align: center;
+    font-size: 14pt;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+pre {
+    background-color: #2d2d2d;
+    /* 内側の余白 */
+    padding: 10px;
+    /* 角を丸くする */
+    border-radius: 5px;
+    /* 横スクロール可能 */ 
+    overflow-x: auto;
+    /* フォント指定 */
+    font-family: 'Fira Code', 'Courier New', monospace; 
+    font-size: 18px;
+  }
+
+/* コードブロック設定 */
+code {
+    background-color: transparent;
+    color: #f8f8f2;
+    font-family: 'Fira Code', 'Courier New', monospace;
+}
+
+/* 引用ブロック */
+blockquote {
+    font-size: 16px;
+    color: #555;
+    background-color: #f9f9f9;
+    /* 内側の余白 */
+    padding: 10px 20px;
+    /* 左側のライン */
+    border-left: 5px solid #ccc;
+    /* 角を丸くする */
+    border-radius: 5px;
+    /* 横幅制限 */
+    max-width: 80%; 
+    /* 影を追加 */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+/* テーブル */
+table {
+    /* 表がスライド幅に合わせて広がる */
+    width: 100%;
+    /* 表のセル間の境界線を結合 */
+    border-collapse: collapse; 
+    /* 横スクロール可能 */ 
+    overflow-x: auto;
+    margin: 1% 0; 
+    font-size: 16px;
+    text-align: left;
+}
+th, td {
+    border: 1px solid #ddd;
+    /* 内側の余白 */
+    padding: 8px; 
+}
+/* タイトル行 */
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+/* 偶数行 */
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* リンク表示 */
+a {
+    /* リンクの文字色 */
+    color: #3891f1d1; 
+    /* 下線を表示しない */
+    text-decoration: none;
+}
+
+/* リンクホバー時 */
+a:hover {
+    /* ホバー時の文字色 */
+    color: #3891f1d1; 
+    /* ホバー時に下線を表示 */
+    text-decoration: underline; 
+}
