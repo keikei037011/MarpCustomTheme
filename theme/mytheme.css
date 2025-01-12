@@ -14,24 +14,16 @@
 }
 .sa {
     justify-content: space-around;
-    /* border: 8px dashed rgb(15, 166, 226);
-    background-color: rgb(222, 244, 255); */
 }
 .sb {
     justify-content: space-between;
-    /* border: 8px dashed rgb(21, 17, 255);
-    background-color: rgb(222, 244, 255); */
 }
 .sa div,.sb div{
     margin: 0.1em;
-    /* border: 8px dashed rgb(80, 177, 109);
-    background-color: rgb(227, 250, 237); */
 }
 .fw div{
     flex: var(--fw);
-    /* background-color: rgb(244, 238, 255);
-    border: 8px dashed rgb(93, 0, 255); */
-}/* ---------- */
+}
 
 /* ページ番号表示箇所 */
 section::after{
@@ -51,35 +43,9 @@ section {
     padding: 20px;
     color:rgba(0, 0, 0, 0.66);
     background: #fdfdfd;
-}
-
-/* 目次クラス 開始*/ 
-section.toc {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     /* 行間を調整 */
-    line-height: 1.8em;
-    text-align: left;
+    line-height: 1.5;
 }
-
-.toc h1 {
-    font-size: 20pt;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-  
-/* リンクスタイル */
-.toc a {
-    color: #333; /* リンク色 */
-    text-decoration: none; /* 下線を削除 */
-}
-  
-.toc a:hover {
-    color: #007bff; /* ホバー時のリンク色 */
-    text-decoration: underline;
-}
-/* 目次クラス　終了 */
 
 /* タイトルクラス */
 section.title {
@@ -105,8 +71,24 @@ section.title p {
   }
 /* タイトルクラス 終了*/
 
+/* 目次クラス 開始*/ 
+section.toc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+section.toc h1 {
+    font-size: pt;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+/* 目次クラス　終了 */
+
 /* コンテンツクラス */
 section.content {
+    justify-content: center;
     padding-top: 30px;
 }
 
@@ -142,7 +124,8 @@ section.content p {
 
 /* ヘッダー */
 header {
-    display: flex;
+    position: absolute;
+    top: 2%;
     height: 60px;
     color: rgb(179, 178, 178);
     font-size: 14pt;
@@ -152,15 +135,15 @@ header {
 /* フッター */
 footer {
     width: 100%;
-    position: fixed;
+    position: absolute;
+    bottom: 1%;
+    left: -45%;
     padding: 10px;
     background: white;
     color: rgb(179, 178, 178);
     bottom: 0px;
     text-align: center;
     font-size: 14pt;
-    display: flex;
-    align-items: center;
     gap: 10px;
 }
 
